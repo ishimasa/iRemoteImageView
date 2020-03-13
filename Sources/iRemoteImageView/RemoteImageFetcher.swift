@@ -13,10 +13,13 @@ public class RemoteImageFetcher: ObservableObject {
     @Published var imageData = Data()
     let url: URL
     
-    public init(url: URL) {
-        self.url = url
-    }
+//    public init(url: URL) {
+//        self.url = url
+//    }
     
+    public init(from url: URL) {
+      self.url = url
+    }
     // URLSessionを使用して data を取得し、結果をobject imageDataとして設定するfetch method。
     public func fetch() {
         URLSession.shared.dataTask(with: url) { (data, _, _) in
